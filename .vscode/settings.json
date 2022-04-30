@@ -1,0 +1,34 @@
+{
+  "editor.tabSize": 2,
+  "workbench.tree.renderIndentGuides": "none",
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 750,
+  "terminal.integrated.enablePersistentSessions": false,
+  "editor.unicodeHighlight.allowedLocales": {
+    "zh-hans": true,
+    "zh-hant": true
+  },
+  "explorer.compactFolders": false,
+  "editor.unicodeHighlight.allowedCharacters": {
+    "管": true
+  },
+  "editor.unicodeHighlight.includeComments": false,
+  "editor.unicodeHighlight.includeStrings": false,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "launch": {
+    "configurations": [],
+    "compounds": []
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "vue-html": "html",
+    "plaintext": "jade",
+    "ejs": "html",
+  },
+}
