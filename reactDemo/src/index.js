@@ -4,7 +4,24 @@ import ReactDOM from "react-dom";
 // import App from "./0_base/01_class组件";
 // import App from "./0_base/02_函数式组件";
 // import App from "./0_base/03_组件嵌套";
-import App from "./0_base/04_组件的样式";
+// import App from "./0_base/04_组件的样式";
+// import App from "./0_base/05_事件处理";
+// import App from "./0_base/06_ref使用";
+// import App from "./0_base/07_条件渲染";
+// import App from "./0_base/08_富文本展示";
+// import App from "./0_base/09_选项卡";
+// import App from "./0_base/10_setState同步异步";
+// import App from "./0_base/11_betterScroll";
+// import App from "./0_base/12_context";
+// import App from "./0_base/13_插槽";
+
+// import App from "./01_生命周期/01_初始化";
+// import App from "./01_生命周期/02_更新阶段_1";
+// import App from "./01_生命周期/02_更新阶段_2";
+// import App from "./01_生命周期/02_更新阶段案例_3";
+// import App from "./01_生命周期/03_componentWillReceiveProps_1";
+// import App from "./01_生命周期/03_componentWillReceiveProps_2";
+import App from "./01_生命周期/04_销毁阶段";
 
 // JSX写法
 // ReactDOM.render((
