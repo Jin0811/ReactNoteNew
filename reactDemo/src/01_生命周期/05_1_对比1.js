@@ -3,14 +3,28 @@ import React, { Component } from 'react';
 class App extends Component {
   state = {
     type: 1,
+    num: 10,
   };
+
+  handleClick = (type) => {
+    this.setState({ type });
+
+    // 这里，num这个状态跟子组件并没有任何关联，但是更新num，依旧会触发子组件的componentWillReceiveProps
+    // 假如子组件，在componentWillReceiveProps发起了请求，可能请求结果还未返回，
+    // 但是这里1秒钟之后，又触发了componentWillReceiveProps，这就造成了不必要的请求
+
+    // 并且更为严重的是，如果多次点击按钮，则父组件多次更新state，这样就触发了很多次子组件的componentWillReceiveProps
+    setTimeout(() => {
+      this.setState({ num: this.state.num + 1 });
+    }, 1000);
+  }
 
   render() {
     let { type } = this.state;
     return (
       <div>
-        <button style={{ color: type === 1 ? "royalblue" : "black" }} onClick={() => { this.setState({ type: 1 }) }}>正在热映</button>
-        <button style={{ color: type === 2 ? "royalblue" : "black" }} onClick={() => { this.setState({ type: 2 }) }}>即将热映</button>
+        <button style={{ color: type === 1 ? "royalblue" : "black" }} onClick={() => this.handleClick(1)}>正在热映</button>
+        <button style={{ color: type === 2 ? "royalblue" : "black" }} onClick={() => this.handleClick(2)}>即将热映</button>
         <List type={this.state.type}></List>
       </div>
     );
@@ -26,9 +40,6 @@ class List extends Component {
     this.queryList(this.props.type);
   }
   componentWillReceiveProps(nextProps){
-    // 这里可能会出现多次请求的问题
-    // 因为父组件任何的状态更新都会触发子组件的componentWillReceiveProps
-    // 这样可能上一个请求还未完成，又进行了新的请求
     // componentWillReceiveProps外部组件多次频繁更新传入不同的props，会导致不必要的异步请求
     this.queryList(nextProps.type);
   }
@@ -53,7 +64,5 @@ class List extends Component {
     );
   }
 }
-
-
 
 export default App;

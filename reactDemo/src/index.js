@@ -21,7 +21,13 @@ import ReactDOM from "react-dom";
 // import App from "./01_生命周期/02_更新阶段案例_3";
 // import App from "./01_生命周期/03_componentWillReceiveProps_1";
 // import App from "./01_生命周期/03_componentWillReceiveProps_2";
-import App from "./01_生命周期/04_销毁阶段";
+// import App from "./01_生命周期/04_销毁阶段";
+
+// import App from "./01_生命周期/05_getDeriveStateFromProps";
+// import App from "./01_生命周期/05_1_对比1";
+// import App from "./01_生命周期/05_1_对比2";
+
+import App from "./01_生命周期/06_getSnapshotBeforeUpdate";
 
 // JSX写法
 // ReactDOM.render((
