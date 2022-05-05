@@ -26,8 +26,11 @@ import ReactDOM from "react-dom";
 // import App from "./01_生命周期/05_getDeriveStateFromProps";
 // import App from "./01_生命周期/05_1_对比1";
 // import App from "./01_生命周期/05_1_对比2";
+// import App from "./01_生命周期/06_getSnapshotBeforeUpdate";
 
-import App from "./01_生命周期/06_getSnapshotBeforeUpdate";
+
+import App from "./03_Router/App";
+
 
 // JSX写法
 // ReactDOM.render((
