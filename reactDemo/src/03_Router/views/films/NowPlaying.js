@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import { nowPlayingData } from "../../mockData";
+import FilmItem from "./FilmItem";
 
 class Main extends Component {
 
@@ -37,7 +38,9 @@ class Main extends Component {
       <div className='now-playing'>
         <h2>NowPlaying</h2>
 
-        { list.map(item => <div className='film-item' key={item.filmId} onClick={() => this.handleClick(item)}>{ item.name }</div>) }
+        {/* { list.map(item => <div className='film-item' key={item.filmId} onClick={() => this.handleClick(item)}>{ item.name }</div>) } */}
+        
+        { list.map(item => <FilmItem key={item.filmId} filmInfo={item}></FilmItem>) }
         
       </div>
     );

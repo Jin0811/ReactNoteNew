@@ -34,7 +34,8 @@ class RouterComponent extends Component {
 
           {/* 路由拦截 */}
           {/* <Route path="/center" component={Center}></Route> */}
-          <Route path="/center" render={() => {
+          {/* 这种模式下，Center不在是Route组件的子组件了，没办法接受props.history，但是render当中有一个props形参，可以手动传递给Center组件 */}
+          <Route path="/center" render={(props) => {
             return auth() ? <Center></Center> : <Redirect to="/login"></Redirect>
           }}></Route>
 
