@@ -11,7 +11,14 @@ import Films from "../views/Films";
 import Cinemas from "../views/Cinemas";
 import Center from "../views/Center";
 import Detail from "../views/Detail";
+import Login from "../views/Login";
 import NotFound from "../views/NotFound";
+
+// 权限认证函数
+function auth(){
+  let token = localStorage.getItem("token");
+  return token;
+}
 
 class RouterComponent extends Component {
   render() {
@@ -20,9 +27,16 @@ class RouterComponent extends Component {
         { this.props.children }
 
         <Switch>
+          <Route path="/login" component={Login}></Route>
+
           <Route path="/films" component={Films}></Route>
           <Route path="/cinemas" component={Cinemas}></Route>
-          <Route path="/center" component={Center}></Route>
+
+          {/* 路由拦截 */}
+          {/* <Route path="/center" component={Center}></Route> */}
+          <Route path="/center" render={() => {
+            return auth() ? <Center></Center> : <Redirect to="/login"></Redirect>
+          }}></Route>
 
           {/* 动态路由 */}
           <Route path="/detail/:id" component={Detail}></Route>
