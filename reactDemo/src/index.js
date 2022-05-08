@@ -28,8 +28,11 @@ import ReactDOM from "react-dom";
 // import App from "./01_生命周期/05_1_对比2";
 // import App from "./01_生命周期/06_getSnapshotBeforeUpdate";
 
+// 路由
+// import App from "./03_Router/App";
 
-import App from "./03_Router/App";
+// Redux
+import App from "./04_Redux/App";
 
 
 // JSX写法

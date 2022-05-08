@@ -22,3 +22,9 @@
     }
     ```
     如上所示，虽然这个CSS文件是一个module，但是其中的 `.global-test` 依旧会影响全局，因为使用了`:global()`
+
+## 3 Redux 
+### 3.1 Redux设计和使用的三大原则
+- state以单一对象存储在stroe对象当中
+- state只读（每次都返回一个新的对象）
+- 使用纯函数reducer进行state的更新

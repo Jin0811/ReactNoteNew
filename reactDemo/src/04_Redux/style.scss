@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.redux-demo{
+  width: 375px;
+  height: 667px;
+  border: 1px solid #f1f1f1;
+  padding: 10px;
+  overflow-y: auto;
+  margin: 50px auto 0px;
+  position: relative;
+
+  // 底部操作栏
+  .navbar{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #f1f1f1;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    a{
+      color: #000;
+      text-decoration: none;
+      width: 20%;
+      text-align: center;
+    }
+    .active-link{
+      color: royalblue;
+    }
+  }
+
+  // 电影
+  .films{
+    .film-item{
+      margin: 10px 0px;
+      cursor: pointer;
+    }
+    .film-type-tab{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px;
+      a{
+        color: #000;
+        text-decoration: none;
+        width: 20%;
+        text-align: center;
+      }
+      .active-link{
+        color: royalblue;
+      }
+    }
+    .film-banner{
+      width: 100%;
+      height: 180px;
+      background: #f1f1f1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  // 公共按钮
+  button{
+    background-color: royalblue;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 8px 15px;
+    min-width: 60px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+}
