@@ -1,11 +1,18 @@
 import React, { useEffect } from 'react';
 
+import store from "../redux/store";
+import { show, hide } from "../redux/actionCreater/TabBarActionCreater";
+
 const Main = (props) => {
   useEffect(() => {
-    // 创建
-
+    // 创建 - 进行发布
+    // store.dispatch({ type: "hide" });
+    store.dispatch(hide()); // 使用actionCreater
+    
     return () => {
-      // 销毁
+      // 销毁 - 进行发布
+      // store.dispatch({ type: "show" });
+      store.dispatch(show()); // 使用actionCreater
     };
   }, []);
 
