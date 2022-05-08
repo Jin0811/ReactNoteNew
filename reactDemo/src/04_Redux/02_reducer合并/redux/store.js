@@ -1,30 +1,25 @@
-import { createStore } from "redux";
+import { combineReducers, createStore } from "redux";
+
+// 分别引入各个模块的reducer，在进行合并
+import CityReducer from "./reducer/CityReducer";
+import TabBarReducer from "./reducer/TabBarReducer";
+// 合并reducer
+const reducer = combineReducers({
+  CityReducer,
+  TabBarReducer
+});
 
 // State的初始值
 const initState = {
-  show: true,
-  cityName: "北京"
-};
-
-// 创建reducer，设置store的初始值：preState = initState
-const reducer = (preState = initState, action) => {
-  let newState = { ...preState };
-  switch (action.type) {
-    case "show":
-      newState.show = true;
-      return newState;
-    case "hide":
-      newState.show = false;
-      return newState;
-    case "changeCity":
-      newState.cityName = action.payload;
-      return newState;
-    default:
-      return newState
-  }
+  TabBarReducer: {
+    show: true,
+  },
+  CityReducer: {
+    cityName: "北京"
+  },
 };
 
 // 创建store，在这里也可以设置初始state，createStore(reducer, initState)
-const store = createStore(reducer);
+const store = createStore(reducer, initState);
 
 export default store;

@@ -8,7 +8,7 @@ import store from "./redux/store";
 
 class App extends Component {
   state = {
-    show: store.getState().show, // 获取store初始值
+    show: store.getState().TabBarReducer.show, // 获取store初始值
   }
 
   componentDidMount(){
@@ -17,7 +17,7 @@ class App extends Component {
       console.log("App - 订阅", store.getState());
 
       // 监听到事件之后，转换为自身的state
-      let { show } = store.getState();
+      let { TabBarReducer: { show } } = store.getState();
       this.setState({ show });
     });
   }

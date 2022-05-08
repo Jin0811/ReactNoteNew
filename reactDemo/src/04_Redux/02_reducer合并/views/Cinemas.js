@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import store from '../redux/store';
 
 const Main = (props) => {
-  let temp = store.getState().cityName;
+  let temp = store.getState().CityReducer.cityName;
   const [cityName] = useState(temp);
 
   const chooseCity = () => {
