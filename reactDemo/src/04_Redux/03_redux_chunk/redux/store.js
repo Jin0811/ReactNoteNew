@@ -1,12 +1,15 @@
-import { combineReducers, createStore } from "redux";
+import { combineReducers, createStore, applyMiddleware } from "redux";
+import reduxThunk from "redux-thunk";
 
 // 分别引入各个模块的reducer，在进行合并
 import CityReducer from "./reducer/CityReducer";
 import TabBarReducer from "./reducer/TabBarReducer";
+import CinemaListReducer from "./reducer/CinemaListReducer";
 // 合并reducer
 const reducer = combineReducers({
   CityReducer,
-  TabBarReducer
+  TabBarReducer,
+  CinemaListReducer
 });
 
 // State的初始值
@@ -17,9 +20,12 @@ const initState = {
   CityReducer: {
     cityName: "北京"
   },
+  CinemaListReducer: {
+    list: []
+  },
 };
 
 // 创建store，在这里也可以设置初始state，createStore(reducer, initState)
-const store = createStore(reducer, initState);
+const store = createStore(reducer, initState, applyMiddleware(reduxThunk));
 
 export default store;

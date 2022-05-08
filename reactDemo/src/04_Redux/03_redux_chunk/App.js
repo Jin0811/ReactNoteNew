@@ -14,8 +14,6 @@ class App extends Component {
   componentDidMount(){
     // App - 订阅
     store.subscribe(() => {
-      console.log("App - 订阅", store.getState());
-
       // 监听到事件之后，转换为自身的state
       let { TabBarReducer: { show } } = store.getState();
       this.setState({ show });
