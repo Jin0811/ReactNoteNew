@@ -29,6 +29,20 @@
 - state只读（每次都返回一个新的对象）
 - 使用纯函数reducer进行state的更新
 
+## 3.2 Redux开发者工具
+- 安装开发者工具，Chrome扩展下载地址：`https://github.com/zalmoxisus/redux-devtools-extension/releases`
+- 配置redux开发者工具：
+```js
+import { createStore, applyMiddleware, compose } from 'redux';
+import reduxThunk from "redux-thunk"; // redux-thunk中间件
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(reducer, composeEnhancers(
+  applyMiddleware(reduxThunk)
+));
+```
+- 注意：redux开发者工具默认是不展示的，不配置代码是无法获取store的
+
 ## 4 纯函数
 - 1 对外接没有副作用，不会影响其他状态，或者与外部函数等有交互
 - 2 同样的输入，会得到同样的输出
