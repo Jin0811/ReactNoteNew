@@ -7,6 +7,11 @@ const Main = (props) => {
   const [cityName] = useState(temp);
   const [list, setList] = useState([]);
 
+  /**
+   * 影院当中，有一个按钮可以跳转到搜索页面，搜索页面的数据与影院列表的数据相同
+   * 使用redux，可以使用一份数据，避免多次请求
+   */
+
   useEffect(() => {
     let list = store.getState().CinemaListReducer.list;
     if(list.length === 0){
