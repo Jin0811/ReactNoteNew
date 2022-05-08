@@ -9,7 +9,7 @@ class Main extends Component {
   render() {
     return (
       <div className='films'>
-        <h2>Films</h2>
+        <h2>电影</h2>
 
         {/* 轮播 */}
         <div className='film-banner'>轮播区域</div>

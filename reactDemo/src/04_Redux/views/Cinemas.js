@@ -5,7 +5,7 @@ class Main extends Component {
   render() {
     return (
       <div className='cinemas'>
-        <h2>Cinemas</h2>
+        <h2>影院</h2>
       </div>
     );
   }

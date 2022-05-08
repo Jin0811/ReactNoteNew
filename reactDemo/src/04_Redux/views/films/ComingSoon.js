@@ -19,7 +19,6 @@ const Main = () => {
 
   return (
     <div className='coming-soon'>
-        <h2>ComingSoon</h2>
         { list.map(item => <div className='film-item' key={item.filmId} onClick={() => handleClick(item)}>{ item.name }</div>) }
       </div>
   );

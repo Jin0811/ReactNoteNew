@@ -1,27 +1,24 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 
-class Main extends Component {
-  state = {
-    id: ""
-  };
+const Main = (props) => {
+  useEffect(() => {
+    // 创建
 
-  componentDidMount(){
-    let id = this.props.match.params.id;
-    this.setState({ id });
+    return () => {
+      // 销毁
+    };
+  }, []);
+
+  const handleBack = () => {
+    props.history.goBack();
   }
 
-  handleBack = () => {
-    this.props.history.goBack();
-  }
-
-  render() {
-    return (
-      <div className='detail'>
-        <h1>Detail - { this.state.id }</h1>
-        <button onClick={this.handleBack}>返回</button>
-      </div>
-    );
-  }
-}
+  return (
+    <div className='detail'>
+      <h1>详情 - { props.match.params.id }</h1>
+      <button style={{ marginTop: "20px"}} onClick={handleBack}>返回</button>
+    </div>
+  );
+};
 
 export default Main;

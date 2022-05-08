@@ -20,7 +20,6 @@ class Main extends Component {
     let { list } = this.state;
     return (
       <div className='now-playing'>
-        <h2>NowPlaying</h2>
         { list.map(item => <FilmItem key={item.filmId} filmInfo={item}></FilmItem>) }
       </div>
     );
