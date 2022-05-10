@@ -34,7 +34,8 @@ import ReactDOM from "react-dom";
 // Redux
 // import App from "./04_Redux/01_基本使用/App";
 // import App from "./04_Redux/02_reducer合并/App";
-import App from "./04_Redux/03_redux_chunk/App";
+// import App from "./04_Redux/03_redux_chunk/App";
+import App from "./04_Redux/04_react_redux/index";
 
 
 // JSX写法
