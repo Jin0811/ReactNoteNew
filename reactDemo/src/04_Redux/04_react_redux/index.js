@@ -1,13 +1,18 @@
 import { Provider } from "react-redux";
 
-import store from "./redux/store";
+import { PersistGate } from 'redux-persist/integration/react';
+
+
+import { store, persistor } from "./redux/store";
 import App from "./App";
 
 // 利用react-redux当中的Provider包裹一下App组件
 const ProviderApp = () => {
   return (
     <Provider store={store}>
-      <App></App>
+      <PersistGate persistor={persistor}>
+        <App></App>
+      </PersistGate>
     </Provider>
   );
 };
