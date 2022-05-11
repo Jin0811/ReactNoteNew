@@ -13,12 +13,14 @@ class App extends Component {
 
   render() {
     return (
-      <div className="redux-demo">
-        {/* 路由组件 */}
-        <RouterComponent>
-          {/* 导航栏组件 */}
-          { this.props.show && <NavBar></NavBar> }
-        </RouterComponent>
+      <div style={{ paddingTop: "50px" }}>
+        <div className="redux-demo">
+          {/* 路由组件 */}
+          <RouterComponent>
+            {/* 导航栏组件 */}
+            { this.props.show && <NavBar></NavBar> }
+          </RouterComponent>
+        </div>
       </div>
     );
   }

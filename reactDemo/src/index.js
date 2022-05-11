@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import 'antd/dist/antd.min.css'; // 引入antd的样式
+
 // import App from "./0_base/01_class组件";
 // import App from "./0_base/02_函数式组件";
 // import App from "./0_base/03_组件嵌套";
