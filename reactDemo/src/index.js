@@ -37,8 +37,10 @@ import 'antd/dist/antd.min.css'; // 引入antd的样式
 // import App from "./04_Redux/01_基本使用/App";
 // import App from "./04_Redux/02_reducer合并/App";
 // import App from "./04_Redux/03_redux_chunk/App";
-import App from "./04_Redux/04_react_redux/index";
+// import App from "./04_Redux/04_react_redux/index";
 
+//immutable
+import App from "./05_immutable/App";
 
 // JSX写法
 // ReactDOM.render((
