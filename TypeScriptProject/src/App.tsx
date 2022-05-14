@@ -1,24 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+// 01_base
+// import "./01_base/01_基本语法";
+// import "./01_base/02_class";
+
+// 02_class_ts
+// import Demo from "./02_class_ts/01_ts_class";
+// import Demo from "./02_class_ts/02_todo";
+// import Demo from "./02_class_ts/03_props";
+
+// 03_fuction_ts
+// import Demo from "./03_fuction_ts/01_ts_function";
+// import Demo from "./03_fuction_ts/02_todo";
+import Demo from "./03_fuction_ts/03_props";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Demo></Demo>
     </div>
   );
 }
