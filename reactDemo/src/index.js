@@ -39,8 +39,16 @@ import 'antd/dist/antd.min.css'; // 引入antd的样式
 // import App from "./04_Redux/03_redux_chunk/App";
 // import App from "./04_Redux/04_react_redux/index";
 
-//immutable
-import App from "./05_immutable/App";
+// immutable
+// import App from "./05_immutable/App";
+
+// 06_styled-components
+// import App from "./06_styled-components/01_base";
+// import App from "./06_styled-components/02_透传props";
+// import App from "./06_styled-components/03_样式化组件";
+// import App from "./06_styled-components/04_样式扩展";
+import App from "./06_styled-components/05_动画";
+
 
 // JSX写法
 // ReactDOM.render((
