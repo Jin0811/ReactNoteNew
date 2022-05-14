@@ -47,8 +47,10 @@ import 'antd/dist/antd.min.css'; // 引入antd的样式
 // import App from "./06_styled-components/02_透传props";
 // import App from "./06_styled-components/03_样式化组件";
 // import App from "./06_styled-components/04_样式扩展";
-import App from "./06_styled-components/05_动画";
+// import App from "./06_styled-components/05_动画";
 
+// 07_unitTest
+import App from "./07_unitTest/App.js";
 
 // JSX写法
 // ReactDOM.render((
