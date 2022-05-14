@@ -13,7 +13,10 @@ import './App.css';
 // 03_fuction_ts
 // import Demo from "./03_fuction_ts/01_ts_function";
 // import Demo from "./03_fuction_ts/02_todo";
-import Demo from "./03_fuction_ts/03_props";
+// import Demo from "./03_fuction_ts/03_props";
+
+// 04_router
+import Demo from "./04_router/App";
 
 function App() {
   return (
