@@ -16,7 +16,10 @@ import './App.css';
 // import Demo from "./03_fuction_ts/03_props";
 
 // 04_router
-import Demo from "./04_router/App";
+// import Demo from "./04_router/App";
+
+// 05_redux
+import Demo from "./05_redux/App";
 
 function App() {
   return (

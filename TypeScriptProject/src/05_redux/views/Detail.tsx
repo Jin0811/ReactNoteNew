@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import { RouteComponentProps } from "react-router-dom"; // 引入router当中的接口
+import store from "../redux/store";
 
 interface propsInterface{
   id: string,
@@ -10,7 +11,10 @@ interface propsInterface{
 class Detail extends Component<RouteComponentProps<propsInterface>, any> {
 
   componentDidMount(){
-    console.log(this.props.match.params);
+    store.dispatch({ type: "hide" });
+  }
+  componentWillUnmount(){
+    store.dispatch({ type: "show" });
   }
 
   render() {
