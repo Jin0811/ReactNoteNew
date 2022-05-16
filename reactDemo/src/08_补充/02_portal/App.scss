@@ -1,0 +1,20 @@
+.portal-demo{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  box-sizing: border-box;
+  .left{
+    width: 20%;
+    background-color: #3498db;
+    position: relative;
+    z-index: 10;
+  }
+  // 这里父组件的层级为5，并且有定位，子元素的层级再高也不会高过父组件的层级
+  // 这就导致了dialog无法遮住left区域
+  .right{
+    width: 80%;
+    background-color: #f1f1f1;
+    position: relative;
+    z-index: 5;
+  }
+}
