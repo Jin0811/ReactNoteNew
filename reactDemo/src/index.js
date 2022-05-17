@@ -55,10 +55,10 @@ import 'antd/dist/antd.min.css'; // 引入antd的样式
 // 08_补充
 // import App from "./08_补充/01_portal/App";
 // import App from "./08_补充/02_portal/App";
-// import App from "./08_补充/03_懒加载/App";
+import App from "./08_补充/03_懒加载/App";
 // import App from "./08_补充/04_forwardRef/01_App";
 // import App from "./08_补充/04_forwardRef/02_App";
-import App from "./08_补充/04_forwardRef/03_App";
+// import App from "./08_补充/04_forwardRef/03_App";
 
 // JSX写法
 // ReactDOM.render((
