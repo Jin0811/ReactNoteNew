@@ -1,9 +1,10 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import Film from "../views/Film.js";
 import Cinema from "../views/Cinema.js";
 import Center from "../views/Center.js";
 import Search from "../views/Search.js";
+import Detail from "../views/Detail.js";
 import NotFound from "../views/NotFound.js";
 
 import ComingSoon from "../views/films/ComingSoon";
@@ -28,6 +29,7 @@ function MyRouter() {
       <Route path='/cinemas' element={<Cinema />}></Route>
       <Route path='/cinemas/search' element={<Search />}></Route>
       <Route path='/center' element={<Center />}></Route>
+      <Route path='/detail/:id' element={<Detail />}></Route>
 
       {/* 重定向 */}
       {/* <Route path="/" element={<Navigate to="/films" />}></Route> */}
@@ -39,7 +41,6 @@ function MyRouter() {
   );
 }
 
-console.log(Navigate);
 export default MyRouter;
 
 /**

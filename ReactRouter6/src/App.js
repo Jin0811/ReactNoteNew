@@ -1,13 +1,20 @@
 import { HashRouter } from "react-router-dom";
 
-// 导入路由组件
-import MyRouter from "./router";
+import MyRouter from "./router"; // 导入路由组件
+import Tabbar from "./components/Tabbar"; // 底部选项卡
 
 function App() {
   return (
-    <HashRouter>
-      <MyRouter></MyRouter>
-    </HashRouter>
+    <div className="app">
+      <HashRouter>
+        <div className="container">
+          <MyRouter></MyRouter>
+
+          {/* 底部Tabbar */}
+          <Tabbar></Tabbar>
+        </div>
+      </HashRouter>
+    </div>
   );
 }
 
