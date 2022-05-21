@@ -66,6 +66,16 @@
   border: 1px solid #ccc;
   margin: 0px auto 20px;
   box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.film .tab-container a{
+  text-decoration: none;
+  color: #000;
+}
+.film .tab-container .active{
+  color: #409EFF;
 }
 .film .outlet-container{
   width: 95%;

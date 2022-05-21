@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
 
 const Film = () => {
   return (
@@ -10,7 +10,8 @@ const Film = () => {
       </div>
 
       <div className="tab-container">
-        
+        <NavLink to="/films/nowPlaying">正在热映</NavLink>
+        <NavLink to="/films/comingSoon">即将热映</NavLink>
       </div>
 
       {/* 路由容器，类似于vue的router-view */}
