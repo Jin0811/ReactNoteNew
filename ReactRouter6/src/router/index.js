@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 
 import Film from "../views/Film.js";
 import Cinema from "../views/Cinema.js";
@@ -22,7 +22,10 @@ function MyRouter() {
 
       {/* 嵌套路由 */}
       <Route path='/films' element={<Film />}>
-        <Route index element={<NowPlaying />}></Route>{/* 使用index属性来使得父路径匹配到时，渲染NowPlaying */}
+        {/* 使用index属性来使得父路径匹配到时，渲染NowPlaying */}
+        {/* <Route index element={<NowPlaying />}></Route> */}
+
+        <Route path="/films" element={<Navigate to="/films/nowPlaying" />}></Route>
         <Route path='nowPlaying' element={<NowPlaying />}></Route>
         <Route path='/films/comingSoon' element={<ComingSoon />}></Route>
       </Route>
