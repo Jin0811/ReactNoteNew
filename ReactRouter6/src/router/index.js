@@ -5,6 +5,7 @@ import Cinema from "../views/Cinema.js";
 import Center from "../views/Center.js";
 import Search from "../views/Search.js";
 import Detail from "../views/Detail.js";
+import Login from "../views/Login.js";
 import NotFound from "../views/NotFound.js";
 
 import ComingSoon from "../views/films/ComingSoon";
@@ -26,10 +27,20 @@ function MyRouter() {
         <Route path='/films/comingSoon' element={<ComingSoon />}></Route>
       </Route>
 
+      <Route path='/detail/:id' element={<Detail />}></Route>
+
       <Route path='/cinemas' element={<Cinema />}></Route>
       <Route path='/cinemas/search' element={<Search />}></Route>
-      <Route path='/center' element={<Center />}></Route>
-      <Route path='/detail/:id' element={<Detail />}></Route>
+
+      {/* 注意：这里的三木表达式，只会在初始化时执行一次，V5版本当中，这里写的是一个回调函数，所以每次都会执行，但是V6这里是一个组件 */}
+      {/* <Route path='/center' element={ isAuth() ? <Center /> : <Redirect to="/login" /> }></Route> */}
+      <Route path='/center' element={
+        <AuthComponment>
+          <Center></Center>
+        </AuthComponment>
+      }></Route>
+
+      <Route path='/login' element={<Login />}></Route>
 
       {/* 重定向 */}
       {/* <Route path="/" element={<Navigate to="/films" />}></Route> */}
@@ -40,6 +51,13 @@ function MyRouter() {
     </Routes>
   );
 }
+
+// 权限组件
+const AuthComponment = ({ children }) => {
+  const isLogin = localStorage.getItem("token");
+  return isLogin ? children : <Redirect to="/login"></Redirect>;
+};
+
 
 export default MyRouter;
 
