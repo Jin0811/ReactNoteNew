@@ -1,15 +1,16 @@
+import React from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 
-import Film from "../views/Film.js";
-import Cinema from "../views/Cinema.js";
-import Center from "../views/Center.js";
-import Search from "../views/Search.js";
-import Detail from "../views/Detail.js";
-import Login from "../views/Login.js";
-import NotFound from "../views/NotFound.js";
+// import Film from "../views/Film.js";
+// import Cinema from "../views/Cinema.js"; // 使用自定义的Lazyload，来进行路由懒加载
+// import Center from "../views/Center.js";
+// import Search from "../views/Search.js";
+// import Detail from "../views/Detail.js";
+// import Login from "../views/Login.js";
+// import NotFound from "../views/NotFound.js";
 
-import ComingSoon from "../views/films/ComingSoon";
-import NowPlaying from "../views/films/NowPlaying";
+// import ComingSoon from "../views/films/ComingSoon";
+// import NowPlaying from "../views/films/NowPlaying";
 
 import Redirect from "../components/Redirect";
 
@@ -21,36 +22,37 @@ function MyRouter() {
       {/* <Route index element={<Film />}></Route> */}
 
       {/* 嵌套路由 */}
-      <Route path='/films' element={<Film />}>
+      <Route path='/films' element={Lazyload("Film")}>
         {/* 使用index属性来使得父路径匹配到时，渲染NowPlaying */}
         {/* <Route index element={<NowPlaying />}></Route> */}
 
         <Route path="/films" element={<Navigate to="/films/nowPlaying" />}></Route>
-        <Route path='nowPlaying' element={<NowPlaying />}></Route>
-        <Route path='/films/comingSoon' element={<ComingSoon />}></Route>
+        <Route path='nowPlaying' element={Lazyload("films/NowPlaying")}></Route>
+        <Route path='/films/comingSoon' element={Lazyload("films/ComingSoon")}></Route>
       </Route>
 
-      <Route path='/detail/:id' element={<Detail />}></Route>
+      <Route path='/detail/:id' element={Lazyload("Detail")}></Route>
 
-      <Route path='/cinemas' element={<Cinema />}></Route>
-      <Route path='/cinemas/search' element={<Search />}></Route>
+      {/* 路由懒加载 */}
+      <Route path='/cinemas' element={Lazyload("Cinema")}></Route>
+      <Route path='/cinemas/search' element={Lazyload("Search")}></Route>
 
       {/* 注意：这里的三木表达式，只会在初始化时执行一次，V5版本当中，这里写的是一个回调函数，所以每次都会执行，但是V6这里是一个组件 */}
       {/* <Route path='/center' element={ isAuth() ? <Center /> : <Redirect to="/login" /> }></Route> */}
       <Route path='/center' element={
         <AuthComponment>
-          <Center></Center>
+          { Lazyload("Center") }
         </AuthComponment>
       }></Route>
 
-      <Route path='/login' element={<Login />}></Route>
+      <Route path='/login' element={Lazyload("Login")}></Route>
 
       {/* 重定向 */}
       {/* <Route path="/" element={<Navigate to="/films" />}></Route> */}
       <Route path="/" element={<Redirect to="/films" />}></Route>
 
       {/* 404 */}
-      <Route path="*" element={<NotFound />}></Route>
+      <Route path="*" element={Lazyload("NotFound")}></Route>
     </Routes>
   );
 }
@@ -59,6 +61,16 @@ function MyRouter() {
 const AuthComponment = ({ children }) => {
   const isLogin = localStorage.getItem("token");
   return isLogin ? children : <Redirect to="/login"></Redirect>;
+};
+
+// 路由懒加载
+const Lazyload = (path) => {
+  const Comp = React.lazy(() => import(`../views/${path}`));
+  return (
+    <React.Suspense fallback={<h1>加载中...</h1>}>
+      <Comp></Comp>
+    </React.Suspense>
+  );
 };
 
 
