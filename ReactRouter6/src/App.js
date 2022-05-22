@@ -1,6 +1,6 @@
 import { HashRouter } from "react-router-dom";
 
-import MyRouter from "./router"; // 导入路由组件
+import MyRouter from "./router/index_useRoutes"; // 导入路由组件
 import Tabbar from "./components/Tabbar"; // 底部选项卡
 
 function App() {
