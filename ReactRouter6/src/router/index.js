@@ -37,7 +37,7 @@ function MyRouter() {
       <Route path='/cinemas' element={Lazyload("Cinema")}></Route>
       <Route path='/cinemas/search' element={Lazyload("Search")}></Route>
 
-      {/* 注意：这里的三木表达式，只会在初始化时执行一次，V5版本当中，这里写的是一个回调函数，所以每次都会执行，但是V6这里是一个组件 */}
+      {/* 注意：这里的三目表达式，只会在初始化时执行一次，V5版本当中，这里写的是一个回调函数，所以每次都会执行，但是V6这里是一个组件 */}
       {/* <Route path='/center' element={ isAuth() ? <Center /> : <Redirect to="/login" /> }></Route> */}
       <Route path='/center' element={
         <AuthComponment>
