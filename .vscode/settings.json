@@ -9,9 +9,6 @@
     "zh-hant": true
   },
   "explorer.compactFolders": false,
-  "editor.unicodeHighlight.allowedCharacters": {
-    "管": true
-  },
   "editor.unicodeHighlight.includeComments": false,
   "editor.unicodeHighlight.includeStrings": false,
   "[html]": {
