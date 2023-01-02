@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 
 class App extends Component {
 
-  handleClick = () => {
+  handleClick1(){
     console.log(this);
   }
-  handleClick1(){
+  handleClick2 = () => {
     console.log(this);
   }
 
@@ -16,10 +16,10 @@ class App extends Component {
         <input type="text" />
 
         {/* 这里handleClick是被react的事件系统调用的，不是被当前组件实例，所以丢失了this */}
-        <button onClick={ this.handleClick }>添加1</button>
+        <button onClick={ this.handleClick1 }>添加1</button>
 
         {/* 这里的handleClick1虽然是被react事件系统调用的，但是handleClick1是一个箭头函数，this在创建时就已经确定了 */}
-        <button onClick={ this.handleClick1 }>添加2</button>
+        <button onClick={ this.handleClick2 }>添加2</button>
       </div>
     );
   }
