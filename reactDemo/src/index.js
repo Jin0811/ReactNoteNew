@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 
 import 'antd/dist/antd.min.css'; // 引入antd的样式
 
@@ -62,7 +62,15 @@ import 'antd/dist/antd.min.css'; // 引入antd的样式
 // import App from "./08_补充/05_memo/App";
 
 // 09_hooks
-import App from "./09_hooks/useState";
+// import App from "./09_hooks/useState";
+
+// 10_react18
+// import App from "./10_react18/01_自动批量更新State";
+// import App from "./10_react18/02_startTransition";
+// import App from "./10_react18/03_useTransition";
+// import App from "./10_react18/04_useDeferredValue";
+import App from "./10_react18/05_Suspense";
+
 
 // JSX写法
 // ReactDOM.render((
@@ -74,5 +82,11 @@ import App from "./09_hooks/useState";
 // 流程：JSX -> 使用react创建组件，babel进行编译 -> JavaScript对象 -> ReactDOM.render -> DOM元素 -> 插入到页面
 // ReactDOM.render(React.createElement("div", { id: "test" }, "这里是内容"), document.getElementById("root"));
 
+// React17写法，在React18当中也可以使用，只不过会有警告
+// ReactDOM.render(<App></App>, document.getElementById("root"));
 
-ReactDOM.render(<App></App>, document.getElementById("root"));
+// React18写法，需要先创建一个root，再利用root去渲染
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <App></App>
+);
